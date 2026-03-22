@@ -76,8 +76,11 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-bg-base text-text-main font-sans selection:bg-accent selection:text-bg-base relative">
+    <div className="min-h-[100dvh] bg-bg-base text-text-main font-sans selection:bg-accent selection:text-bg-base relative">
       
+      {/* Fixed Static Gradient Background */}
+      <div className="fixed inset-0 z-0 bg-gradient-to-br from-[#111111] via-[#1a1510] to-[#2a2216] pointer-events-none"></div>
+
       {/* Global Textures & Lighting */}
       <div className="bg-noise"></div>
       <div className="fixed inset-0 bg-grid-pattern pointer-events-none z-0 opacity-50"></div>
@@ -88,7 +91,7 @@ function App() {
       <div className="fixed bottom-[-20%] right-[10%] w-[70vw] h-[70vw] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[150px] pointer-events-none z-0 rounded-full mix-blend-screen"></div>
 
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-bg-base/80 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-bg-base/90 backdrop-blur-xl border-b border-white/10 py-3' : 'bg-transparent py-5'}`}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <div className={`w-8 h-8 flex items-center justify-center border ${isScrolled ? 'border-text-main' : 'border-white'}`}>
@@ -139,7 +142,7 @@ function App() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden bg-bg-base">
+      <section className="relative h-[100dvh] min-h-[700px] flex items-center overflow-hidden bg-bg-base">
         <div 
           className="absolute inset-0 bg-parallax"
           style={{ backgroundImage: `url(${getImage(0)})` }}
@@ -194,19 +197,20 @@ function App() {
       </section>
 
       {/* Dynamic Background Wrapper for Content */}
-      <div className="bg-dynamic-gradient relative z-10">
+      <div className="relative z-10">
         {/* About / Philosophy */}
-        <section id="o-firmie" className="py-32 relative z-10 overflow-hidden">
+        <section id="o-firmie" className="py-16 md:py-24 relative z-10 overflow-hidden">
         <div className="absolute inset-0 bg-radial-glow pointer-events-none"></div>
-        <div className="watermark-text text-[15rem] top-0 left-[-5%] opacity-20">INŻYNIERIA</div>
+        <div className="watermark-text text-[10rem] md:text-[15rem] top-0 left-[-5%] opacity-10">INŻYNIERIA</div>
         
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
             
             <div className="lg:col-span-5 flex flex-col justify-center">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-8 h-[1px] bg-accent"></div>
-                <h2 className="text-xs tracking-[0.3em] text-accent uppercase">O firmie</h2>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-[2px] bg-accent"></div>
+                <h2 className="text-[10px] tracking-[0.3em] text-accent uppercase font-bold">O firmie</h2>
+                <div className="w-12 h-[2px] bg-accent"></div>
               </div>
               <h3 className="text-4xl md:text-5xl font-display text-text-main leading-tight mb-8">
                 Inżynieria precyzji <br/><span className="italic text-accent">w każdym detalu.</span>
@@ -280,13 +284,13 @@ function App() {
       </section>
 
       {/* Services / Competencies - Premium Sticky Scroll Layout */}
-      <section id="kompetencje" className="py-32 border-y border-white/5 relative z-10">
+      <section id="kompetencje" className="py-16 md:py-24 border-y border-white/5 relative z-10">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="watermark-text text-[12rem] top-[20%] right-[-10%] opacity-20 vertical-text">KOMPETENCJE</div>
         </div>
         
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
             {/* Premium Glassmorphism Sticky Sidebar */}
             <div className="lg:col-span-4 relative">
@@ -294,8 +298,8 @@ function App() {
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent/50 to-transparent"></div>
                 
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-8 h-[1px] bg-accent"></div>
-                  <h2 className="text-xs tracking-[0.3em] text-accent uppercase">Zakres Kompetencji</h2>
+                  <div className="w-12 h-[2px] bg-accent"></div>
+                  <h2 className="text-[10px] tracking-[0.3em] text-accent uppercase font-bold">Zakres Kompetencji</h2>
                 </div>
                 <h3 className="text-3xl md:text-4xl font-display text-text-main mb-6">
                   Specjalizacje wykonawcze
@@ -558,10 +562,15 @@ function App() {
       </section>
 
       {/* Guarantees / Why Us - Clean Solid Cards (NO IMAGES) */}
-      <section id="standardy" className="py-32 border-y border-white/5 relative z-10">
+      <section id="standardy" className="py-16 md:py-24 border-y border-white/5 relative z-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="text-center mb-20">
-            <h3 className="text-3xl md:text-4xl font-display text-text-main mb-6">Standardy naszej pracy</h3>
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="w-12 h-[2px] bg-accent"></div>
+              <h2 className="text-[10px] tracking-[0.3em] text-accent uppercase font-bold">Standardy</h2>
+              <div className="w-12 h-[2px] bg-accent"></div>
+            </div>
+            <h3 className="text-3xl md:text-5xl font-display text-text-main mb-6">Standardy naszej pracy</h3>
             <p className="text-text-muted font-light max-w-2xl mx-auto">
               Wybierając naszą firmę, decydujesz się na spokój ducha. Remont nie musi kojarzyć się ze stresem i opóźnieniami.
             </p>
@@ -622,13 +631,13 @@ function App() {
       </section>
 
       {/* FAQ Section - bg-bg-base */}
-      <section className="py-32 relative z-10 border-b border-white/5">
+      <section id="standardy" className="py-16 md:py-24 border-y border-white/5 relative z-10">
         <div className="max-w-4xl mx-auto px-6 md:px-12">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-8 h-[1px] bg-accent"></div>
-              <h2 className="text-xs tracking-[0.3em] text-accent uppercase">FAQ</h2>
-              <div className="w-8 h-[1px] bg-accent"></div>
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="w-12 h-[2px] bg-accent"></div>
+              <h2 className="text-[10px] tracking-[0.3em] text-accent uppercase font-bold">FAQ</h2>
+              <div className="w-12 h-[2px] bg-accent"></div>
             </div>
             <h3 className="text-3xl md:text-4xl font-display text-text-main">Często zadawane pytania</h3>
           </div>
@@ -652,9 +661,9 @@ function App() {
                 a: "Tak, na wszystkie wykonane przez nas prace budowlane i instalacyjne udzielamy pisemnej gwarancji."
               }
             ].map((faq, index) => (
-              <div key={index} className="border border-white/5 bg-bg-surface overflow-hidden">
+              <div key={index} className="border border-white/5 bg-bg-base overflow-hidden">
                 <button 
-                  className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none hover:bg-white/[0.02] transition-colors duration-300"
                   onClick={() => toggleFaq(index)}
                 >
                   <span className="font-display text-lg text-text-main">{faq.q}</span>
