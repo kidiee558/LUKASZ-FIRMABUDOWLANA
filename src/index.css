@@ -62,14 +62,6 @@ h1, h2, h3, h4, h5, h6, .font-display {
   transform: scale(1.03);
 }
 
-/* Parallax utility */
-.bg-parallax {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 /* Oversized typography for process section */
 .oversized-number {
   font-family: var(--font-display);
@@ -123,19 +115,6 @@ h1, h2, h3, h4, h5, h6, .font-display {
   100% { background-position: 60px 60px; }
 }
 
-/* Dynamic Animated Gradient Background */
-.bg-dynamic-gradient {
-  background: linear-gradient(-45deg, #111111, #1a1510, #382c1b, #111111);
-  background-size: 400% 400%;
-  background-attachment: fixed;
-  animation: gradientBG 15s ease infinite;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 .watermark-text {
   position: absolute;
   font-family: var(--font-display);
