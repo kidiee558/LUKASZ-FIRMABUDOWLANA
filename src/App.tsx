@@ -144,7 +144,7 @@ function App() {
       {/* Hero Section */}
       <section className="relative h-[100dvh] min-h-[700px] flex items-center overflow-hidden bg-bg-base">
         <div 
-          className="absolute inset-0 bg-parallax"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${getImage(0)})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-bg-base via-bg-base/60 to-transparent" />
