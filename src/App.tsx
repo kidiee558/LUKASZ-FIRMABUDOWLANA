@@ -76,7 +76,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-[100dvh] bg-bg-base text-text-main font-sans selection:bg-accent selection:text-bg-base relative">
+    <div className="min-h-screen bg-bg-base text-text-main font-sans selection:bg-accent selection:text-bg-base relative">
       
       {/* Fixed Static Gradient Background */}
       <div className="fixed inset-0 z-0 bg-gradient-to-br from-[#111111] via-[#1a1510] to-[#2a2216] pointer-events-none"></div>
@@ -142,7 +142,7 @@ function App() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="relative h-[100dvh] min-h-[700px] flex items-center overflow-hidden bg-bg-base">
+      <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden bg-bg-base">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${getImage(0)})` }}
